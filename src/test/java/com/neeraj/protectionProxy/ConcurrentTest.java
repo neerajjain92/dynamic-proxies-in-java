@@ -1,6 +1,6 @@
 package com.neeraj.protectionProxy;
 
-import com.neeraj.handcraftedVirtualProxies.CustomMap;
+import com.neeraj.virtualProxy.CustomMap;
 
 import java.util.concurrent.atomic.LongAdder;
 import java.util.stream.IntStream;

@@ -43,7 +43,7 @@ public class LoggingInvocationHandler implements InvocationHandler {
         }
     }
 
-    private String toString(Method method, Object[] args) {
+    private static String toString(Method method, Object[] args) {
         return String.format("%s.%s(%s)",
                 method.getDeclaringClass().getCanonicalName(),
                 method.getName(),

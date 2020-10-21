@@ -1,6 +1,6 @@
 package com.neeraj.dynamicProxy;
 
-import com.neeraj.handcraftedVirtualProxies.CustomMap;
+import com.neeraj.virtualProxy.CustomMap;
 import org.junit.Test;
 
 import java.lang.reflect.Proxy;

@@ -1,4 +1,4 @@
-package com.neeraj.handcraftedVirtualProxies;
+package com.neeraj.virtualProxy;
 
 import java.util.function.BiConsumer;
 

@@ -1,4 +1,4 @@
-package com.neeraj.handcraftedVirtualProxies;
+package com.neeraj.virtualProxy;
 
 /**
  * @author neeraj on 19/10/20

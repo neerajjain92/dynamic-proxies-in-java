@@ -1,7 +1,7 @@
 package com.neeraj.cascadedProxy;
 
-import com.neeraj.handcraftedVirtualProxies.CustomHashMap;
-import com.neeraj.handcraftedVirtualProxies.VirtualCustomMapVirtualProxy;
+import com.neeraj.virtualProxy.CustomHashMap;
+import com.neeraj.virtualProxy.VirtualCustomMapVirtualProxy;
 import com.neeraj.protectionProxy.ConcurrentTest;
 import com.neeraj.protectionProxy.SynchronizedCustomMap;
 import org.junit.Test;

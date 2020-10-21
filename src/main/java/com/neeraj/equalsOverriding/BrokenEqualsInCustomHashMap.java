@@ -1,6 +1,6 @@
 package com.neeraj.equalsOverriding;
 
-import com.neeraj.handcraftedVirtualProxies.CustomMap;
+import com.neeraj.virtualProxy.CustomMap;
 
 import java.util.HashMap;
 import java.util.Map;

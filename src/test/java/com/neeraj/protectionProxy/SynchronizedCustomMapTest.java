@@ -1,6 +1,6 @@
 package com.neeraj.protectionProxy;
 
-import com.neeraj.handcraftedVirtualProxies.CustomHashMap;
+import com.neeraj.virtualProxy.CustomHashMap;
 import org.junit.Test;
 
 /**

@@ -10,6 +10,7 @@ import java.lang.reflect.Proxy;
 public class ProxyNameDemo {
 
     public static void main(String[] args) {
+
         System.out.println(
                 Proxy.newProxyInstance(
                         ISODateParser.class.getClassLoader(),
