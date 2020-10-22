@@ -2,11 +2,14 @@ package com.neeraj;
 
 import com.neeraj.dynamicProxy.handlers.ExceptionUnwrappingInvocationHandler;
 import com.neeraj.dynamicProxy.util.MethodTurboBooster;
+import com.neeraj.protectionProxy.handlers.SynchronizedHandler;
+import com.neeraj.virtualProxy.handlers.VirtualProxyHandler;
 
 import java.io.Serializable;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
 import java.util.Objects;
+import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -42,7 +45,8 @@ public final class Proxies {
         ));
     }
 
-    public static <S> S simpleProxy(Class<? super S> subjectInterface, S subject) {
+    public static <S> S simpleProxy(Class<? super S> subjectInterface,
+                                    S subject) {
         return castProxy(subjectInterface,
                 (InvocationHandler & Serializable) (proxy, method, args) ->
                 {
@@ -57,5 +61,20 @@ public final class Proxies {
                     return method.invoke(subject, args);
                 }
         );
+    }
+
+    /**
+     * PECS : Producer extends, Consumer Super principle.
+     * Here subjectSupplier is a supplier which produces some subject, hence wild-card is
+     */
+    public static <S> S virtualProxy(Class<? super S> subjectInterface, Supplier<? extends S> subjectSupplier) {
+        Objects.requireNonNull(subjectSupplier, "subjectSupplier==null");
+        return castProxy(subjectInterface, new VirtualProxyHandler<>(subjectSupplier));
+    }
+
+
+    public static <S> S synchronizedProxy(Class<? super S> subjectInterface, S subject) {
+        Objects.requireNonNull(subject, "subject==null");
+        return castProxy(subjectInterface, new SynchronizedHandler<>(subject));
     }
 }
